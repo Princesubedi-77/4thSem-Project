@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: white;
+  align-items: center;
+  background-color: black;
+}
+
+.login-card{
+padding: 24px;
+width: 400px;
+max-width: 340px;
+text-align:center;
+border: 1px solid rgb(242, 237, 237);
+}
+
+input{
+   padding: 10px;
+   background-color: black;
+   color: white;
+   width: 85%;
+   border: 1px solid rgb(236, 230, 230);
+   margin: 20px;
+}
+
+.btn{
+   background-color: white;
+   width: 90%;
+   color: black;
+   padding: 12px;
+   
+}
+
+.login{
+      padding: 10px;
+      border: 1px solid rgb(252, 252, 252);
+      margin: 45px;
+
+}
