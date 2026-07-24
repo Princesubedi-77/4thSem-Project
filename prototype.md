@@ -4,8 +4,24 @@
 
 ```text
 hotel-management-system/
+hotel-management-system/
 │
-├── index.html
+├── config/
+│   └── db.php                     # Database connection configuration
+│
+├── api/                           # Backend REST endpoints (PHP)
+│   ├── auth.php                   # Login, logout, session checks
+│   ├── staff.php                  # CRUD for staff members
+│   ├── rooms.php                  # CRUD for rooms & statuses
+│   ├── guests.php                 # CRUD for guest records
+│   ├── bookings.php               # CRUD for bookings
+│   ├── checkin.php                # Check-in processing logic
+│   └── checkout.php               # Check-out & billing logic
+│
+├── database/
+│   └── schema.sql                 # MySQL table definitions & sample data
+│
+├── index.html                     # Login page
 ├── dashboard.html
 ├── staff.html
 ├── rooms.html
@@ -28,13 +44,16 @@ hotel-management-system/
 │   ├── staff.css
 │   ├── rooms.css
 │   ├── guests.css
-│   ├── bookings.css
 │   └── checkin-checkout.css
 │
 └── js/
     ├── login.js
     ├── dashboard.js
-    └── app.js
+    ├── staff.js                   # Dedicated JS per view
+    ├── rooms.js
+    ├── guests.js
+    ├── bookings.js
+    └── app.js                     # Shared utilities & API fetch wrappers
 ```
 
 ---
