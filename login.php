@@ -18,7 +18,10 @@ header("location: Dashboard.html");
 exit();
 }
 else {
-    header("location:index.html");
-    echo "Username or Password is incorrect";
+  echo "<script>
+    alert ('Incorret Username or Password');
+    history.back();
+    </script>";
+    
 } 
 ?>
