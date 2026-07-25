@@ -1,15 +1,22 @@
 <?php
+// 1. Include the database connection file
 include "database.php";
 
+// 2. Collect user input from the form
 $first_name = $_POST["first_name"];
-$last_name = $_POST ["last_name"];
-$email = $_POST["email"];
-$password = $_POST["password"];
+$last_name  = $_POST["last_name"];
+$email      = $_POST["email"];
+$password   = $_POST["password"];
 
-// $sql = "INSERT INTO 
-// user(first_name,last_name,email,password)"
+// 3. Write the SQL query to insert data
+$sql = "INSERT INTO user (first_name, last_name, email, password) 
+        VALUES ('$first_name', '$last_name', '$email', '$password')";
 
-$conn->query($sqli);
-
-echo "account created";
+// 4. Execute the query
+if ($conn->query($sql)) {
+   header ("location: index.html");
+   exit();
+} else {
+    echo "Error: " . $conn->error;
+}
 ?>
