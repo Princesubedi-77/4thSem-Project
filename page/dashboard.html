@@ -6,20 +6,71 @@
     <title>Dashboard</title>
    
     <style>
-       
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+       .sidebar{
+        font-family: Arial, sans-serif;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        position: fixed;
+        color: white;
+        width: 250px;
+        height: 100vh;
+        padding: 25px 15px;
+        background-color: black;
+
+        h2 {
+          color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        a{
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            margin-bottom: 30px;
+            color: white;
+            font-size: 15px;
+        }
+        a:hover{
+            background-color: rgb(44, 43, 43);
+        }
+       }
+
+     
+.content {
+  margin-left: 250px;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+
+.content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
     </style>
 </head>
 <body>
    <div>
      <aside class="sidebar">
-    <b2> Hotel mnagement System</b2>
-        <a href="Dashboard.html">Dashboard</a>
-        <a href="staff.html">Staff management</a>
-        <a href="rooms.html">Room management</a>
-        <a href="guest.html">Guest management</a>
-        <a href="booking.html">Booking management</a>
+    <h2> Hotel System</h2>
+        <a href="overview.html" target="iframe">Overview</a>
+        <a href="staff.html" target="iframe">Staff Management</a>
+        <a href="rooms.html" target="iframe">Room  Management</a>
+        <a href="guest.html" target="iframe">Guest  Management</a>
+        <a href="booking.html" target="iframe">Booking  Management</a>
+        <a href="checkin-out.html" target="iframe">Check-in\Check-out</a>
     
     </aside>
+   </div>
+   <div class="content">
+    <iframe name="iframe"></iframe>
    </div>
 </body>
 </html>
