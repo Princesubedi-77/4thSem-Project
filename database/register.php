@@ -14,7 +14,7 @@ $sql = "INSERT INTO user (first_name, last_name, email, password)
 
 // 4. Execute the query
 if ($conn->query($sql)) {
-   header ("location: index.html");
+   header ("Location: ../index.html");
    exit();
 } else {
     echo "Error: " . $conn->error;
