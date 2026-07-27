@@ -5,30 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Management System Login</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Relative path: Assumes 'css' folder is in the same directory as this HTML file -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+
     <div class="card">
-         <h1> HOTEL MANAGEMENT SYSTEM </h1>
-        <form action="login.php" method="post" >
-          
+        <h1>HOTEL MANAGEMENT SYSTEM</h1>
+
+        <!-- Updated form action to point to your login script -->8
+        <form action="../database/login.php" method="POST">
+
             <div class="form-element">
-          
-            <input type="text" placeholder="Username" name="first_name">
+                <input type="text" placeholder="Username" name="username" required>
             </div>
 
             <div class="form-element">
-            
-                 <input type="password" placeholder="Password" name="password">
+                <input type="password" placeholder="Password" name="password" required>
             </div>
-            <button class= "btn" type="submit">Log In</button>
 
-            
+            <button class="btn" type="submit">Log In</button>
+
         </form>
-        <p> Don't have an account ? <a href="newaccount.html">Sign up</a></p>
 
-   </div>
+        <p>Don't have an account? <a href="page/newaccount.html">Sign up</a></p>
+
+    </div>
+
 </body>
 
 </html>

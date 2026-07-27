@@ -14,7 +14,7 @@ $result = $conn->query($sql);
 if ($result->num_rows>0) {
 
     $_SESSION["user"] = $first_name;
-header("location: Dashboard.html"); 
+header("location: ../page/dashboard.html"); 
 exit();
 }
 else {
