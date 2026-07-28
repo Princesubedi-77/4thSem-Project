@@ -5,22 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guest Management</title>
     <style>
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
     th{
         background-color: rgb(0, 0, 0);
         color: white;
-        padding: 15px;
-        width: 300px;
+        padding: 5px;
+        width: 200px;
     }
     td{
         text-align: center;
-        padding: 15px;
-        width: 300px;
+        padding: 8px;
+        width: 200px;
+    }
+    .guest-table{
+        max-width: 900px;
+        margin: 0;
+        padding: 20px;
+    }
+    .guest-btn{
+        background-color: black;
+        color: white;
+        text-align: center;
+        margin-bottom: 15px;
+        padding: 4px;
+        text-decoration : none;
+        /* display: flex;
+        justify-content: flex-start; */
     }
     </style>
 </head>
 <body>
+     <div class="guest-table">
     <h1>Guest management</h1>
-<table style="border: 1px solid orange;">
+    <a class="guest-btn" href="addguest.html">+Add</a>
+    <div class="guest-table">
+<table>
     <tr>
         <th> S.No</th>
         <th> Name</th>
@@ -52,6 +75,6 @@
         <td> 98373</td>
     </tr>
 </table>
-
+</div>
 </body>
 </html>

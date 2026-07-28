@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Staff</title>
+</head>
+<body>
+    <form target="staff.php" method="post">
+
+        <label>Name</label>
+        <input type="text" placeholder="Name" name="name">
+
+        <label> email</label>
+        <input type="email" placeholder="Email" name="email">
+
+        <label> Phone</label>
+        <input type="number" placeholder="Number" name="number">
+
+        <label> Role </label>
+        <select name="role">
+            <option> Select </option>
+            <option> Waiter</option>
+            <option> Cook </option>
+            <option> Receptiotest</option>
+            <option> Housekeeping</option>
+        </select>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
