@@ -3,7 +3,7 @@ include "database.php";
 
 $name = $_POST["name"];
 $email = $_POST["email"];
-$phone = $_Post["phone"];
+$phone = $_POST["phone"];
 
 $sql = "INSERT INTO guest (name,email,phone)
         VALUES ('$name','$email','$phone')";

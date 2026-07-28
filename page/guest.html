@@ -1,80 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guest Management</title>
     <style>
-
-        table{
+        nav {
             width: 100%;
-            border-collapse: collapse;
+            top: 0;
+            left: 0;
+            font-family: Arial, sans-serif;
+            position: fixed;
+            display: flex;
+            color: white;
+            background-color: black;
+            align-items: center;
+
+
+            a {
+                text-decoration: none;
+                display: flex;
+                padding: 15px 40px;
+                margin: 10px;
+                color: white;
+                font-size: 18px;
+                gap: 30px
+            }
+
+            a:hover {
+                background-color: rgb(255, 255, 255);
+                color: black;
+            }
         }
-    th{
-        background-color: rgb(0, 0, 0);
-        color: white;
-        padding: 5px;
-        width: 200px;
-    }
-    td{
-        text-align: center;
-        padding: 8px;
-        width: 200px;
-    }
-    .guest-table{
-        max-width: 900px;
-        margin: 0;
-        padding: 20px;
-    }
-    .guest-btn{
-        background-color: black;
-        color: white;
-        text-align: center;
-        margin-bottom: 15px;
-        padding: 4px;
-        text-decoration : none;
-        /* display: flex;
-        justify-content: flex-start; */
-    }
+
+        .guest-btn {
+            color: white;
+            background-color: black;
+            text-decoration: none;
+            padding: 10px;
+            position: relative;
+            left: 1100px;
+            top: 100px;
+            text-align: center;
+        }
+
+        table {
+            position: relative;
+            left: 100px;
+            top: 150px;
+            text-align: center;
+        }
+
+        .tr {
+            color: rgb(250, 250, 251);
+            background-color: rgb(0, 0, 0);
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgb(66, 2, 2);
+        }
+
+        th {
+            padding: 15px;
+            width: 250px;
+        }
     </style>
 </head>
+
 <body>
-     <div class="guest-table">
-    <h1>Guest management</h1>
-    <a class="guest-btn" href="addguest.html">+Add</a>
+
+    <nav>
+
+        <a href="dashboard.html" class="active">Dashboard</a>
+
+        <a href="rooms.html">Rooms</a>
+
+        <a href="booking.html">Bookings</a>
+
+        <a href="guests.html">Guests</a>
+
+        <a href="staff.html">Staff</a>
+
+        <a href="checkout.html">Checkout</a>
+
+        <a href="profile.html">Profile</a>
+
+    </nav>
     <div class="guest-table">
-<table>
-    <tr>
-        <th> S.No</th>
-        <th> Name</th>
-        <th> Email</th>
-      <th> Phone</th>
-    </tr>
-    <tr>
-        <td> 1</td>
-        <td> Messi</td>
-        <td> messi@email.com</td>
-        <td> 943434</td>
-    </tr>
-    <tr>
-        <td> 2</td>
-        <td> Ronaldo</td>
-        <td> ronaldo@gmail.com</td>
-        <td> 98343</td>
-    </tr>
-     <tr>
-        <td> 3</td>
-        <td> Neymar</td>
-        <td> neymar@gmail.com</td>
-        <td> 98313</td>
-    </tr>
-     <tr>
-        <td> 4 </td>
-        <td> Penaldo</td>
-        <td> penaldo@gmail.com</td>
-        <td> 98373</td>
-    </tr>
-</table>
-</div>
+        <a class="guest-btn" href="addguest.html">+Add</a>
+        <div class="guest-table">
+            <table>
+                <tr class="tr">
+                    <th> S.No</th>
+                    <th> Name</th>
+                    <th> Email</th>
+                    <th> Phone</th>
+                </tr>
+                <tr>
+                    <td> 1</td>
+                    <td> Messi</td>
+                    <td> messi@email.com</td>
+                    <td> 943434</td>
+                </tr>
+                <tr>
+                    <td> 2</td>
+                    <td> Ronaldo</td>
+                    <td> ronaldo@gmail.com</td>
+                    <td> 98343</td>
+                </tr>
+                <tr>
+                    <td> 3</td>
+                    <td> Neymar</td>
+                    <td> neymar@gmail.com</td>
+                    <td> 98313</td>
+                </tr>
+                <tr>
+                    <td> 4 </td>
+                    <td> Penaldo</td>
+                    <td> penaldo@gmail.com</td>
+                    <td> 98373</td>
+                </tr>
+            </table>
+        </div>
 </body>
+
 </html>
