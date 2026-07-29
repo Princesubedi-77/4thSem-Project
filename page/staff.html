@@ -5,32 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Management</title>
     <style>
-        nav{
-        width: 100%;
-        top: 0;
-        left: 0;
-        font-family: Arial, sans-serif;
-        position: fixed;
-        display: flex;
-        color: white;
-        background-color: black;
-        align-items: center;
-
-    
-        a{
-            text-decoration: none;
-            display: flex;
-            padding: 15px 40px;
-            margin: 10px;
-            color: white;
-            font-size: 18px;
-            gap: 30px
-        }
-        a:hover{
-            background-color: rgb(255, 255, 255);
-            color: black;
-        }
-       }
+       
         .add{
             background-color: black;
             color: white;
@@ -39,24 +14,9 @@
     </style>
 </head>
 <body>
-    <nav>
-
-<a href="dashboard.html" class="active">Dashboard</a>
-
-<a href="rooms.html">Rooms</a>
-
-<a href="booking.html">Bookings</a>
-
-<a href="guest.html">Guests</a>
-
-<a href="staff.html">Staff</a>
-
-<a href="checkout.html">Checkout</a>
-
-<a href="profile.html">Profile</a>
-
-</nav>
+   <div id="navbar"></div>
     <h1> This is Guest management</h1>
     <a class="add" href="addstaff.html">+Add</a>
+      <script src="navbar.js"></script>
 </body>
 </html>
