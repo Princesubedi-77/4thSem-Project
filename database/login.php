@@ -14,7 +14,7 @@ $result = $conn->query($sql);
 if ($result > 0) {
 
     $_SESSION["user"] = $first_name;
-header("Location: /HMS/page/dashboard.html"); 
+header("Location: /HMS/page/navbar.html"); 
 exit();
 }
 else {
