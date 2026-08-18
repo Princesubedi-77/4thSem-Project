@@ -1,16 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-   
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 100px auto 40px;
+      padding: 0 20px;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: 24px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th {
+      background: #000;
+      color: #fff;
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+      background: #f5f5f5;
+    }
+
+    .status {
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 13px;
+      border: 1px solid #ccc;
+    }
+
+    .available {
+      background: #f1f5f9;
+    }
+
+    .occupied {
+      background: #e5e5e5;
+    }
+
+    .maintenance {
+      background: #ddd;
+    }
+
+    @media (max-width: 700px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div id="navbar"></div>
- <script src="navbar.js"></script>
-   
+
+  <div id="navbar"></div>
+
+  <div class="container">
+
+    <h2>Dashboard</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Total Rooms</h3>
+        <p>25</p>
+      </div>
+
+      <div class="card">
+        <h3>Available Rooms</h3>
+        <p>12</p>
+      </div>
+
+      <div class="card">
+        <h3>Today's Bookings</h3>
+        <p>8</p>
+      </div>
+
+      <div class="card">
+        <h3>Total Guests</h3>
+        <p>42</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Recent Bookings</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Guest</th>
+            <th>Room</th>
+            <th>Check-In</th>
+            <th>Check-Out</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Messi</td>
+            <td>101</td>
+            <td>18 Aug</td>
+            <td>20 Aug</td>
+            <td>Confirmed</td>
+          </tr>
+
+          <tr>
+            <td>Ronaldo</td>
+            <td>203</td>
+            <td>18 Aug</td>
+            <td>22 Aug</td>
+            <td>Checked In</td>
+          </tr>
+
+          <tr>
+            <td>Neymar</td>
+            <td>105</td>
+            <td>19 Aug</td>
+            <td>21 Aug</td>
+            <td>Confirmed</td>
+          </tr>
+
+          <tr>
+            <td>Biju</td>
+            <td>302</td>
+            <td>19 Aug</td>
+            <td>23 Aug</td>
+            <td>Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h3>Room Status</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Room</th>
+            <th>Type</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>101</td>
+            <td>Single Room</td>
+            <td><span class="status available">Available</span></td>
+          </tr>
+
+          <tr>
+            <td>102</td>
+            <td>Double Room</td>
+            <td><span class="status occupied">Occupied</span></td>
+          </tr>
+
+          <tr>
+            <td>103</td>
+            <td>Delux Room</td>
+            <td><span class="status available">Available</span></td>
+          </tr>
+
+          <tr>
+            <td>104</td>
+            <td>Double Room</td>
+            <td><span class="status maintenance">Maintenance</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="navbar.js"></script>
+
 </body>
 </html>

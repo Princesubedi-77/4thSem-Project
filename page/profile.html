@@ -1,15 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overview</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HMS - Profile</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 100px auto 40px;
+      padding: 0 20px;
+    }
+
+    .profile {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 30px;
+    }
+
+    h2 {
+      margin: 0 0 25px;
+      font-size: 24px;
+    }
+
+    .profile-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .info {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 12px;
+    }
+
+    .info label {
+      display: block;
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 6px;
+    }
+
+    .info p {
+      margin: 0;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .role {
+      display: inline-block;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 5px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border: 0;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .edit {
+      background: #000;
+      color: #fff;
+    }
+
+    .logout {
+      background: #555;
+      color: #fff;
+    }
+
+    .delete {
+      background: #dc2626;
+      color: #fff;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    #editProfile {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #editProfile iframe {
+      width: 100%;
+      height: 350px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 600px) {
+      .profile-info {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div id="navbar"></div>
-    
-    <h1> This is Profile</h1>
-      <script src="navbar.js"></script>
+
+  <div id="navbar"></div>
+
+  <div class="container">
+    <div class="profile">
+
+      <h2>Profile</h2>
+
+      <div class="profile-info">
+
+        <div class="info">
+          <label>First Name</label>
+          <p>Admin</p>
+        </div>
+
+        <div class="info">
+          <label>Last Name</label>
+          <p>User</p>
+        </div>
+
+        <div class="info">
+          <label>Email</label>
+          <p>admin@hms.com</p>
+        </div>
+
+        <div class="info">
+          <label>Role</label>
+          <span class="role">Administrator</span>
+        </div>
+
+      </div>
+
+      <div class="actions">
+        <button class="btn edit" onclick="showEditProfile()">Edit Profile</button>
+        <button class="btn logout" onclick="logout()" action="../database/logout.php" >Logout</button>
+        <button class="btn delete" onclick="deleteAccount()">Delete Account</button>
+      </div>
+
+      <div id="editProfile">
+        <iframe src="editprofile.html"></iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="navbar.js"></script>
+
+  <script>
+    function showEditProfile() {
+      document.getElementById("editProfile").style.display = "block";
+    }
+
+    function logout() {
+      if (confirm("Are you sure you want to logout?")) {
+        alert("Logout will be connected to the backend later.");
+      }
+    }
+
+    function deleteAccount() {
+      if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+        alert("Account deletion will be connected to the backend later.");
+      }
+    }
+
+    function logout() {
+  if (confirm("Are you sure you want to logout?")) {
+    window.location.href = "../database/logout.php";
+  }
+}
+  </script>
+
 </body>
 </html>
