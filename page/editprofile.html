@@ -1,0 +1,97 @@
+<div class="edit-profile">
+  <h2>Edit Profile</h2>
+
+  <div class="form">
+    <div>
+      <label>First Name</label>
+      <input type="text" value="Admin">
+    </div>
+
+    <div>
+      <label>Last Name</label>
+      <input type="text" value="User">
+    </div>
+
+    <div>
+      <label>Email</label>
+      <input type="email" value="admin@hms.com">
+    </div>
+
+    <div>
+      <label>New Password</label>
+      <input type="password" placeholder="Enter new password">
+    </div>
+
+    <div>
+      <label>Confirm Password</label>
+      <input type="password" placeholder="Confirm new password">
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="save">Save Changes</button>
+    <button class="cancel">Cancel</button>
+  </div>
+</div>
+
+<style>
+  .edit-profile {
+    padding: 30px;
+  }
+
+  .edit-profile h2 {
+    margin: 0 0 25px;
+    font-size: 22px;
+  }
+
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .form div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form label {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 7px;
+  }
+
+  .form input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  .form input:focus {
+    border-color: #000;
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .actions button {
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .save {
+    background: #000;
+    color: #fff;
+  }
+
+  .cancel {
+    background: #eee;
+  }
+</style>
