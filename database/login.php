@@ -5,23 +5,32 @@ include "database.php";
 $first_name = $_POST["first_name"];
 $password = $_POST["password"];
 
-$sql = "SELECT count(*) FROM USER WHERE
-first_name = '$first_name' AND
-password = '$password'";
+$sql = "SELECT USER_ID, First_Name, PASSWORD FROM user WHERE First_Name = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $first_name);
+$stmt->execute();
+$result = $stmt->get_result();
 
-$result = $conn->query($sql);
+if ($result->num_rows === 1) {
+    $user = $result->fetch_assoc();
 
-if ($result > 0) {
-
-    $_SESSION["user"] = $first_name;
-header("Location: /HMS/page/dashboard.html"); 
-exit();
-}
-else {
-  echo "<script>
-    alert ('Incorret Username or Password');
-    history.back();
+    if ($password === $user["PASSWORD"]) {
+        $_SESSION["user_id"] = $user["USER_ID"];
+        $_SESSION["user"] = $user["First_Name"];
+        header("Location: /HMS/page/dashboard.html");
+        exit();
+    } else {
+        echo "<script>
+            alert('Incorrect Username or Password');
+            history.back();
+        </script>";
+    }
+} else {
+    echo "<script>
+        alert('Incorrect Username or Password');
+        history.back();
     </script>";
-    
-} 
+}
+
+$stmt->close();
 ?>
