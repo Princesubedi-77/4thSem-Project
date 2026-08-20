@@ -1,12 +1,14 @@
 fetch("navbar.html")
-.then(r => r.text())
-.then(t => {
-    document.getElementById("navbar").innerHTML = t;
+.then(response => response.text())
+.then(data => {
+    document.getElementById("navbar").innerHTML = data;
 
-    let page = location.pathname.split("/").pop();
+    let page = window.location.pathname.split("/").pop();
 
     document.querySelectorAll("nav a").forEach(link => {
-        if (link.getAttribute("href") === page) {
+        let linkPage = link.getAttribute("href");
+
+        if (linkPage === page) {
             link.classList.add("active");
         }
     });

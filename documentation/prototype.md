@@ -29,7 +29,7 @@ hotel-management-system/
 ├── bookings.html
 ├── checkin.html
 ├── checkout.html
-├── profile.html
+├── profile.php
 │
 ├── receptionist-dashboard.html
 ├── receptionist-rooms.html

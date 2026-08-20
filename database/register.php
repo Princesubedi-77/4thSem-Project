@@ -7,10 +7,10 @@ $first_name = $_POST["first_name"];
 $last_name  = $_POST["last_name"];
 $email      = $_POST["email"];
 $password   = $_POST["password"];
-
+$role       = $_POST["role"];
 // 3. Write the SQL query to insert data
-$sql = "INSERT INTO user (first_name, last_name, email, password) 
-        VALUES ('$first_name', '$last_name', '$email', '$password')";
+$sql = "INSERT INTO user (first_name, last_name, email, password, role) 
+        VALUES ('$first_name', '$last_name', '$email', '$password', '$role')";
 
 // 4. Execute the query
 if ($conn->query($sql)) {

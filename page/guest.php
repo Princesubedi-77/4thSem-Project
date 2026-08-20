@@ -1,3 +1,10 @@
+<?php
+include "../database/database.php";
+
+$sql = "SELECT * FROM guest ORDER BY id DESC";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,15 +116,19 @@
   <div id="navbar"></div>
 
   <div class="container">
-    <div class="action-bar">
-      <input type="text" class="search-input" placeholder="Search guests...">
 
-      <button class="btn-add" onclick="window.location.href='addguest.html'">
+    <div class="action-bar">
+
+      <input type="text" class="search-input" id="search" placeholder="Search guests...">
+
+      <button class="btn-add" onclick="window.location.href='addguest.php'">
         + Add Guest
       </button>
+
     </div>
 
     <table class="custom-table">
+
       <thead>
         <tr>
           <th style="width: 60px;">S.No</th>
@@ -128,65 +139,84 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody id="guestTable">
+
+        <?php
+        $serial = 1;
+
+        if ($result->num_rows > 0) {
+
+          while ($guest = $result->fetch_assoc()) {
+        ?>
+
         <tr>
-          <td>1</td>
-          <td>Messi</td>
-          <td>messi@email.com</td>
-          <td>943434</td>
+          <td><?php echo $serial++; ?></td>
+
+          <td><?php echo htmlspecialchars($guest["Name"]); ?></td>
+
+          <td><?php echo htmlspecialchars($guest["Email"]); ?></td>
+
+          <td><?php echo htmlspecialchars($guest["phone"]); ?></td>
+
           <td style="text-align: center;">
-            <button class="action-btn btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
-            <button class="action-btn btn-delete"><i class="fa-solid fa-trash"></i></button>
+
+            <a href="editguest.php?id=<?php echo $guest["id"]; ?>">
+              <button class="action-btn btn-edit">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+            </a>
+
+            <a href="../database/deleteguest.php?id=<?php echo $guest["id"]; ?>"
+               onclick="return confirm('Are you sure you want to delete this guest?');">
+
+              <button class="action-btn btn-delete">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+
+            </a>
+
           </td>
         </tr>
 
+        <?php
+          }
+
+        } else {
+        ?>
+
         <tr>
-          <td>2</td>
-          <td>Ronaldo</td>
-          <td>ronaldo@gmail.com</td>
-          <td>98343</td>
-          <td style="text-align: center;">
-            <button class="action-btn btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
-            <button class="action-btn btn-delete"><i class="fa-solid fa-trash"></i></button>
+          <td colspan="5" style="text-align:center;">
+            No guests found
           </td>
         </tr>
 
-        <tr>
-          <td>3</td>
-          <td>Neymar</td>
-          <td>neymar@gmail.com</td>
-          <td>98313</td>
-          <td style="text-align: center;">
-            <button class="action-btn btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
-            <button class="action-btn btn-delete"><i class="fa-solid fa-trash"></i></button>
-          </td>
-        </tr>
+        <?php
+        }
+        ?>
 
-        <tr>
-          <td>4</td>
-          <td>Penaldo</td>
-          <td>penaldo@gmail.com</td>
-          <td>98373</td>
-          <td style="text-align: center;">
-            <button class="action-btn btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
-            <button class="action-btn btn-delete"><i class="fa-solid fa-trash"></i></button>
-          </td>
-        </tr>
-
-        <tr>
-          <td>5</td>
-          <td>Biju</td>
-          <td>biju@gmail.com</td>
-          <td>987623</td>
-          <td style="text-align: center;">
-            <button class="action-btn btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
-            <button class="action-btn btn-delete"><i class="fa-solid fa-trash"></i></button>
-          </td>
-        </tr>
       </tbody>
+
     </table>
+
   </div>
 
   <script src="navbar.js"></script>
+
+  <script>
+    document.getElementById("search").addEventListener("keyup", function() {
+
+      let search = this.value.toLowerCase();
+
+      document.querySelectorAll("#guestTable tr").forEach(function(row) {
+
+        row.style.display = row.innerText.toLowerCase().includes(search)
+          ? ""
+          : "none";
+
+      });
+
+    });
+  </script>
+
 </body>
 </html>
