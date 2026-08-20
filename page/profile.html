@@ -154,7 +154,7 @@
 
       <div class="actions">
         <button class="btn edit" onclick="showEditProfile()">Edit Profile</button>
-        <button class="btn logout" onclick="logout()" action="../database/logout.php" >Logout</button>
+        <button class="btn logout" onclick="logout()">Logout</button>
         <button class="btn delete" onclick="deleteAccount()">Delete Account</button>
       </div>
 
@@ -183,11 +183,17 @@
         alert("Account deletion will be connected to the backend later.");
       }
     }
-
+    
     function logout() {
   if (confirm("Are you sure you want to logout?")) {
     window.location.href = "../database/logout.php";
   }
+}
+
+function deleteAccount(){
+    if(confirm("Are you sure you want to delete your account")){
+        window.location.href="../database/deleteaccount.php";
+    }
 }
   </script>
 
